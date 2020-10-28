@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/10 - record life</title>
+  <title>十月日记 - record life</title>
+  
+    <meta name="keywords" content="日记">
   
 
   
@@ -275,7 +275,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://cdn.jsdelivr.net/gh/lulala1126/CDN@1.1/images/9.jpg"></div>
           
@@ -330,128 +330,237 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-      
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
     
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
     
-    <h2 class="article-title" >
-      <a href="/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/">
+      <h1 class="title">
         十月日记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        8日
-学习
-Hidden markov models(HMMs):隐马尔可夫模型
- 五要素：
-   状态集合：
-​      M，表示模型中的隐藏状态数，状态之间可以相互转移，例如天气情况
-​      N,表示每个状态不同的观察符号，例如海藻的状态
-   概率矩阵：
-​      A,状态转移分布，隐藏状态相互转移的概率
-​      B,观察符号在各个隐藏状态下的概率分布
-​      ...
-      
-    
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">-[日记] -[学习日常]</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
-        <time>2020-10-28</time>
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2020年10月28日</p>
+  </a>
+</div>
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">-[日记] -[学习日常]</a>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="十月日记" data-path="/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p><strong><em>8日</em></strong></p>
+<p><strong>学习</strong></p>
+<p>Hidden markov models(HMMs):隐马尔可夫模型</p>
+<p> 五要素：</p>
+<p>   状态集合：</p>
+<p>​      M，表示模型中的隐藏状态数，状态之间可以相互转移，例如天气情况</p>
+<p>​      N,表示每个状态不同的观察符号，例如海藻的状态</p>
+<p>   概率矩阵：</p>
+<p>​      A,状态转移分布，隐藏状态相互转移的概率</p>
+<p>​      B,观察符号在各个隐藏状态下的概率分布</p>
+<p>​      Π：表示初始状态分布，即时间0情况下隐藏状态分布</p>
+<p> 三实现：</p>
+<p>​    评价：前向算法  确定一个可观察序列的概率</p>
+<p>​    解码：维特比算法 找到可能性最大的隐藏序列</p>
+<p>​    学习：前后向算法 给定某个可观察序列，怎么知道这个模型的一些参数</p>
+<p>Stochastic grammars:随机文法</p>
+<p>Maximum entropy Markov models (MEMMs)：最大熵马尔可夫模型</p>
+<p>Entropy熵：度量混乱</p>
+<p>熵增原理：宇宙中的事物都有自发变得更混乱的倾向，整个宇宙自发地朝着可能性更大的方向也就是熵更大的方向发展。</p>
+<p>标注偏置问题 label bias problem:状态之间的假设是标注偏置问题的根源，由于分支数的不同，概率的分布不均衡，导致状态的转移存在不公平的情况，会导致陷入局部最优解的情况中。</p>
+<p> <strong>日记</strong></p>
+<p>今天十一点半离开宿舍来到实验室，看小说看到两点半（妈蛋，好长时间，太堕落了），下载了几个深度估计的论文，依然不清楚未来的方向，害怕随时的失落，以及从未走出泥潭的恐惧，但却还没试着踏出探索的脚步，看了一会crf的论文，过于深奥，中间有太多不懂的专业知识，四点左右清理了一会朋友圈，像是重新走了一边成长路，有点微妙的感觉，今天实验室好冷，冻的手有点冰凉，git从中午来开始下载，现在终于要完成了。</p>
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/>http://example.com/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-28T10:09:22+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2020年10月28日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
+          
   
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/10/26/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8D%81%E6%9C%88/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>-十月</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/&title=十月日记 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/&title=十月日记 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/&title=十月日记 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
       
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+</div>
+
+
+
         
-        <time>2020-10-26</time>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/2020/10/26/hello-world/'>
-            阅读全文
-          </a>
-        </div>
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/10/26/hello-world/'>
+          <p class='title'>Hello World<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -459,126 +568,14 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">record life</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" href="/categories/%E6%97%A5%E8%AE%B0-%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"
-            id="categoriesE697A5E8AEB0-E5ADA6E4B9A0E697A5E5B8B8"
-            ><div class='name'>-[日记] -[学习日常]</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/%E5%8D%81%E6%9C%88/" style="font-size: 14px; color: #999">-十月</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -588,8 +585,8 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="十月日记";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
