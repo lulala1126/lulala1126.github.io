@@ -283,7 +283,7 @@
   <div class='top'>
     
     
-      <p class="title">星</p>
+      <p class="title">璐</p>
     
     
   </div>
@@ -898,6 +898,23 @@ var loadCSS = function( href, before, media, attributes ){
 
 
 
+   <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.l_main .reveal', {
+      distance: '32px',
+      duration: '800',
+      interval: '20',
+      scale: '1',
+      easing: 'ease-out'
+    });
+  }
+  $(function () {
+    pjax_scrollrebeal();
+  });
+</script>
+
+
 
 
   <script>
@@ -1420,6 +1437,8 @@ document.addEventListener("pjax:success", listennSidebarTOC);
 		  Pjax_backstretch()
         
         
+        
+          pjax_scrollrebeal();
         
         
         
