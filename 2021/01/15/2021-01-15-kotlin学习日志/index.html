@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
@@ -21,7 +19,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>归档：2020/10 - record life</title>
+  <title>kotlin学习日志 - record life</title>
+  
+    <meta name="keywords" content="kotlin">
   
 
   
@@ -275,7 +275,7 @@
     <div id="l_cover">
   
     
-        <div id="half" class='cover-wrapper  dock' style="display: ;">
+        <div id="half" class='cover-wrapper post dock' style="display: ;">
           
             <div id='cover-backstretch'></div>
           
@@ -330,128 +330,274 @@
         
 
 <div class='l_main'>
-	
-		
-  <section class="post-list">
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  
+
+
+  
+  <div class="article-meta" id="top">
     
-      
+    
+    
+      <h1 class="title">
+        kotlin学习日志
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' href="/" rel="nofollow">
+    <img no-lazy src="">
+    <p></p>
+  </a>
+</div>
+
           
         
           
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/kotlin/">kotlin</a><span class="sep"></span><a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">学习日常</a>
+    </a>
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2021年1月15日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="kotlin学习日志" data-path="/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+      </div>
+    
+  </div>
+
+
+  
+  <h4 id="kotlin学习日志-day1"><a href="#kotlin学习日志-day1" class="headerlink" title="kotlin学习日志 day1"></a>kotlin学习日志 day1</h4><p><strong><em>变量定义</em></strong></p>
+<p>read-only variables are defined using the keyword <code>val</code>. They can be assigned a value only once.</p>
+<p>Variables that can be reassigned use the <code>var</code> keyword.</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> c: <span class="built_in">Int</span>  <span class="comment">// Type required when no initializer is provided</span></span><br><span class="line">c = <span class="number">3</span>       <span class="comment">// deferred assignment</span></span><br><span class="line">c = <span class="number">4</span>       <span class="comment">//error:Val cannot be reassigned</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span> <span class="comment">// `Int` type is inferred</span></span><br><span class="line">x += <span class="number">1</span>    <span class="comment">//result:x = 6</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><em>函数</em></strong></p>
+<p>函数形参表示形式→<code>name:type</code>,多个形参用<code>,</code>分割。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">powerOf</span><span class="params">(number: <span class="type">Int</span>, exponent: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> &#123; <span class="comment">/*...*/</span> &#125; <span class="comment">//Int表示return类型</span></span><br><span class="line">                                        <span class="built_in">Unit</span> &#123; <span class="comment">/*...*/</span> &#125;  <span class="comment">//无返回值，可不写</span></span><br></pre></td></tr></table></figure>
+
+<p>形参带缺省值的函数</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">read</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    b: <span class="type">Array</span>&lt;<span class="type">Byte</span>&gt;, </span></span></span><br><span class="line"><span class="function"><span class="params">    off: <span class="type">Int</span> = <span class="number">0</span>, </span></span></span><br><span class="line"><span class="function"><span class="params">    len: <span class="type">Int</span> = b.size,</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span> &#123; <span class="comment">/*...*/</span> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当子类继承父类并重写其方法时，缺省值不能改变。</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">open</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="keyword">open</span> <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(i: <span class="type">Int</span> = <span class="number">10</span>)</span></span> &#123; <span class="comment">/*...*/</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> : <span class="type">A</span></span>() &#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">fun</span> <span class="title">foo</span><span class="params">(i: <span class="type">Int</span>)</span></span> &#123; <span class="comment">/*...*/</span> &#125;  <span class="comment">// No default value is allowed</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在调用函数时，可以通过形参名称赋值，减少不必要的赋值操作</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">reformat</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">    str: <span class="type">String</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    normalizeCase: <span class="type">Boolean</span> = <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    upperCaseFirstLetter: <span class="type">Boolean</span> = <span class="literal">true</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    divideByCamelHumps: <span class="type">Boolean</span> = <span class="literal">false</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">    wordSeparator: <span class="type">Char</span> = <span class="string">&#x27; &#x27;</span>,</span></span></span><br><span class="line"><span class="function"><span class="params">)</span></span> &#123;</span><br><span class="line"><span class="comment">/*...*/</span></span><br><span class="line">&#125;</span><br><span class="line">reformat(<span class="string">&#x27;This is a long String!&#x27;</span>) <span class="comment">// skip all arguments with default values</span></span><br><span class="line">reformat(<span class="string">&#x27;This is a short String!&#x27;</span>, upperCaseFirstLetter = <span class="literal">false</span>, wordSeparator = <span class="string">&#x27;_&#x27;</span>) <span class="comment">// after the first skipped argument, you must name all subsequent arguments</span></span><br></pre></td></tr></table></figure>
+
+<p>单行表达式函数</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">double</span><span class="params">(x: <span class="type">Int</span>)</span></span> = x * <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>可变参数的形参（Varargs）</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="type">&lt;T&gt;</span> <span class="title">asList</span><span class="params">(<span class="keyword">vararg</span> ts: <span class="type">T</span>)</span></span>: List&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">val</span> result = ArrayList&lt;T&gt;()</span><br><span class="line">    <span class="keyword">for</span> (t <span class="keyword">in</span> ts) <span class="comment">// ts is an Array</span></span><br><span class="line">        result.add(t)</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">val</span> list = asList(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>) <span class="comment">//允许不确定个实数作为函数的形参</span></span><br><span class="line"><span class="comment">//还可以通过扩展操作符将一个已存在的array作为形参</span></span><br><span class="line"><span class="keyword">val</span> a = arrayOf(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="keyword">val</span> list = asList(-<span class="number">1</span>, <span class="number">0</span>, *a, <span class="number">4</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>Infix notation</p>
+<p>infix函数使用<code>infix</code>关键字表示,调用时可省略点以及括号，但必须满足下列要求:</p>
+<ul>
+<li> 必须是成员函数或者扩展函数</li>
+<li>只能有一个形参</li>
+<li>形参不能为可变参数（Varargs)及不能有缺省值</li>
+</ul>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Util</span></span>(<span class="keyword">val</span> number:<span class="built_in">Int</span>) &#123;</span><br><span class="line">    <span class="keyword">infix</span> <span class="function"><span class="keyword">fun</span> <span class="title">sum</span><span class="params">(other: <span class="type">Int</span>)</span></span> &#123;</span><br><span class="line">      println(number + other)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">val</span> u = Util(<span class="number">5</span>)</span><br><span class="line">	u sum <span class="number">5</span> <span class="comment">//  10</span></span><br><span class="line">	u sum <span class="number">7</span> <span class="comment">// 12</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>infix函数的优先级低于算术操作符（+-*/）高于逻辑操作符（&amp;&amp;、||）</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> shl <span class="number">2</span> + <span class="number">3</span> 等于 <span class="number">1</span> shl (<span class="number">2</span> + <span class="number">3</span>)</span><br><span class="line"><span class="number">0</span> until n * <span class="number">2</span> 等于 <span class="number">0</span> until (n * <span class="number">2</span>)</span><br><span class="line">xs union ys <span class="keyword">as</span> Set&lt;*&gt; 等于 xs union (ys <span class="keyword">as</span> Set&lt;*&gt;)</span><br><span class="line"></span><br><span class="line">a &amp;&amp; b xor c 等于 a &amp;&amp; (b xor c)</span><br><span class="line">a xor b <span class="keyword">in</span> c 等于 (a xor b) <span class="keyword">in</span> c</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>IF表达式</em></strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">maxOf</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span>: <span class="built_in">Int</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (a &gt; b) &#123;</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> b</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//等同于下方的单行表达式</span></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">maxOf</span><span class="params">(a: <span class="type">Int</span>, b: <span class="type">Int</span>)</span></span> = <span class="keyword">if</span> (a &gt; b) a <span class="keyword">else</span> b</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>for循环</em></strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;kiwifruit&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> (item <span class="keyword">in</span> items) &#123;</span><br><span class="line">    println(item)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//or</span></span><br><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;kiwifruit&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> (index <span class="keyword">in</span> items.indices) &#123;</span><br><span class="line">    println(<span class="string">&quot;item at <span class="variable">$index</span> is <span class="subst">$&#123;items[index]&#125;</span>&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>while循环</em></strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> items = listOf(<span class="string">&quot;apple&quot;</span>, <span class="string">&quot;banana&quot;</span>, <span class="string">&quot;kiwifruit&quot;</span>)</span><br><span class="line"><span class="keyword">var</span> index = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (index &lt; items.size) &#123;</span><br><span class="line">    println(<span class="string">&quot;item at <span class="variable">$index</span> is <span class="subst">$&#123;items[index]&#125;</span>&quot;</span>)</span><br><span class="line">    index++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>when表达式</em></strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">describe</span><span class="params">(obj: <span class="type">Any</span>)</span></span>: String =</span><br><span class="line">    <span class="keyword">when</span> (obj) &#123;</span><br><span class="line">        <span class="number">1</span>          -&gt; <span class="string">&quot;One&quot;</span></span><br><span class="line">        <span class="string">&quot;Hello&quot;</span>    -&gt; <span class="string">&quot;Greeting&quot;</span></span><br><span class="line">        <span class="keyword">is</span> <span class="built_in">Long</span>    -&gt; <span class="string">&quot;Long&quot;</span></span><br><span class="line">        !<span class="keyword">is</span> String -&gt; <span class="string">&quot;Not a string&quot;</span></span><br><span class="line">        <span class="keyword">else</span>       -&gt; <span class="string">&quot;Unknown&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    println(describe(<span class="number">1</span>)) <span class="comment">//One</span></span><br><span class="line">    println(describe(<span class="string">&quot;Hello&quot;</span>)) <span class="comment">//Greeting</span></span><br><span class="line">    println(describe(<span class="number">1000L</span>)) <span class="comment">//Long</span></span><br><span class="line">    println(describe(<span class="number">2</span>)) <span class="comment">//Not a string</span></span><br><span class="line">    println(describe(<span class="string">&quot;other&quot;</span>)) <span class="comment">//Unknown</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong><em>range</em></strong></p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">1</span>..<span class="number">10</span> step <span class="number">2</span>) &#123;</span><br><span class="line">        print(x)  <span class="comment">//13579</span></span><br><span class="line">    &#125;</span><br><span class="line">    println()</span><br><span class="line">    <span class="keyword">for</span> (x <span class="keyword">in</span> <span class="number">9</span> downTo <span class="number">0</span> step <span class="number">3</span>) &#123;</span><br><span class="line">        print(x) <span class="comment">//9630</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=http://example.com/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/>http://example.com/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2021-01-16T13:15:13+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2021年1月16日</p>
+  </a>
+</div>
+
         
       
-    
-    
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%AD%A6%E4%B9%A0/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>学习</p></a></div>
+
+
+        
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/">
-        十月日记
-      </a>
-    </h2>
-  
-  <div class='md'>
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        8日
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&title=kotlin学习日志 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&title=kotlin学习日志 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2021/01/15/2021-01-15-kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&title=kotlin学习日志 - record life&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,666">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/'>
+          <p class='title'>十月日记<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>8日
 学习
 Hidden markov models(HMMs):隐马尔可夫模型
  五要素：
    状态集合：
 ​      M，表示模型中的隐藏状态数，状态之间可以相互转移，例如天气情况
-​      N,表示每个状态不同的观察符号，例如海藻的状态
-   概率矩阵：
-​      A,状态转移分布，隐藏状态相互转移的概率
-​      B,观察符号在各个隐藏状态下的概率分布
-​      ...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-10-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/">学习日常</a><span class="sep"></span><a class="category-link" href="/categories/%E6%97%A5%E8%AE%B0/">日记</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/28/2020-10-28-%E5%8D%81%E6%9C%88%E6%97%A5%E8%AE%B0/'>
-            阅读全文
-          </a>
-        </div>
+​ ...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/2020/10/26/hello-world/">
-        Hello World
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time>2020-10-26</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/26/hello-world/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-	
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -459,136 +605,28 @@ Qu...
     
     
 
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">爱是什么？创造是什么？星是什么？</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/volantis-x/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop">
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/kotlin/" href="/categories/kotlin/"
-            id="categorieskotlin"
-            ><div class='name'>kotlin</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/" href="/categories/%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%B8%B8/"
-            id="categoriesE5ADA6E4B9A0E697A5E5B8B8"
-            ><div class='name'>学习日常</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AE%B0/" href="/categories/%E6%97%A5%E8%AE%B0/"
-            id="categoriesE697A5E8AEB0"
-            ><div class='name'>日记</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#kotlin%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-day1"><span class="toc-text">kotlin学习日志 day1</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/%E5%8D%81%E6%9C%88/" style="font-size: 14px; color: #999">十月</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">学习</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
+
 
 
         
@@ -598,8 +636,8 @@ Qu...
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="kotlin学习日志";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
 
